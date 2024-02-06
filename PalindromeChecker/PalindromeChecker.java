@@ -13,6 +13,14 @@ public class PalindromeChecker {
         transformed = splice(input); //Splice , and ! from string
         checkPalindrome(transformed); //Check if string is palindrome
 
+        boolean isPalindrome = checkPalindrome(transformed);
+        if (isPalindrome) {
+            System.out.println("The transformed input is a palindrome.");
+            System.out.println(input);
+            System.out.println(transformed);
+        } else {
+            System.out.println("The transformed input is not a palindrome. :(");
+        }
     }
 
     public static String splice(String input) {
@@ -22,12 +30,12 @@ public class PalindromeChecker {
         return input;
     }
 
-    public static void checkPalindrome(String input) {
+    public static boolean checkPalindrome(String input) {
         String reversed = reverseString(input); //Reverse string to backwards
         if (input.equals(reversed)) {
-            System.out.println("The transformed input is a palindrome.");
+            return true;
         } else {
-            System.out.println("The transformed input is not a palindrome.");
+            return false;
         }
     }
 
