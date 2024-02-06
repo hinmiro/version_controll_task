@@ -10,12 +10,12 @@ public class PalindromeChecker {
 
         System.out.print("Write word and we check if it is palindrome: ");
         String input = scan.nextLine();
-        transformed = transformInput(input);
-        checkPalindrome(transformed);
+        transformed = splice(input); //Splice , and ! from string
+        checkPalindrome(transformed); //Check if string is palindrome
 
     }
 
-    public static String transformInput(String input) {
+    public static String splice(String input) {
         input = input.toLowerCase();
         input = input.replace(",", "");
         input = input.replace("!", "");
@@ -23,7 +23,7 @@ public class PalindromeChecker {
     }
 
     public static void checkPalindrome(String input) {
-        String reversed = reverseString(input);
+        String reversed = reverseString(input); //Reverse string to backwards
         if (input.equals(reversed)) {
             System.out.println("The transformed input is a palindrome.");
         } else {
@@ -33,7 +33,7 @@ public class PalindromeChecker {
 
     public static String reverseString(String input) {
         StringBuilder reversed = new StringBuilder();
-        for (int i = input.length() - 1; i >= 0; i--) {
+        for (int i = input.length() - 1; i >= 0; i--) { // Iterate word backwards
             reversed.append(input.charAt(i));
         }
         return reversed.toString();
