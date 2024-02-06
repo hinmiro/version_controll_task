@@ -1,20 +1,18 @@
 package PalindromeChecker;
+
 import java.util.Scanner;
+
 public class PalindromeChecker {
+    static Scanner scan = new Scanner(System.in);
+    static String transformed;
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
+        System.out.print("Write word and we check if it is palindrome: ");
+        String input = scan.nextLine();
+        transformed = transformInput(input);
+        checkPalindrome(transformed);
 
-        String transformed = transformInput(input);
-
-        boolean isPalindrome = checkPalindrome(transformed);
-        if (isPalindrome) {
-            System.out.println("The transformed input is a palindrome.");
-        } else {
-            System.out.println("The transformed input is not a palindrome.");
-        }
     }
 
     public static String transformInput(String input) {
@@ -24,12 +22,12 @@ public class PalindromeChecker {
         return input;
     }
 
-    public static boolean checkPalindrome(String input) {
+    public static void checkPalindrome(String input) {
         String reversed = reverseString(input);
         if (input.equals(reversed)) {
-            return true;
+            System.out.println("The transformed input is a palindrome.");
         } else {
-            return false;
+            System.out.println("The transformed input is not a palindrome.");
         }
     }
 
