@@ -8,6 +8,8 @@ public class PalindromeChecker {
 
     public static void main(String[] args) {
 
+        System.out.println("This is a test");
+
         System.out.print("Write word and we check if it is palindrome: ");
         String input = scan.nextLine();
         transformed = splice(input); //Splice , and ! from string
